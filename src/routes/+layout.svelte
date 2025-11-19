@@ -37,7 +37,7 @@
 	/>
 	<meta name="twitter:image" content="https://beta.rinkai.co/og-img.webp" />
 
-	<link rel="icon" href="/favicon.svg" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </svelte:head>
 
 <DevNavbar />
