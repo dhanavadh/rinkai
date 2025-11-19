@@ -11,15 +11,21 @@ const createNavbarStore = () => {
 	const isScrollingDown = writable(false);
 	const lastScrollY = writable(0);
 	const isAtTop = writable(true);
+	const isErrorPage = writable(false);
 
 	const isTransparentPath = derived(page, ($page) => {
 		return navbarConfig.transparentPaths.includes($page.url.pathname);
 	});
 
 	const backgroundClass = derived(
-		[isTransparentPath, isMobileMenuOpen, isMenuHovered, isAtTop],
-		([$isTransparentPath, $isMobileMenuOpen, $isMenuHovered, $isAtTop]) => {
-			if (!$isTransparentPath || $isMobileMenuOpen || $isMenuHovered || !$isAtTop) {
+		[isTransparentPath, isMobileMenuOpen, isMenuHovered, isAtTop, isErrorPage],
+		([$isTransparentPath, $isMobileMenuOpen, $isMenuHovered, $isAtTop, $isErrorPage]) => {
+			if (
+				(!$isTransparentPath && !$isErrorPage) ||
+				$isMobileMenuOpen ||
+				$isMenuHovered ||
+				!$isAtTop
+			) {
 				return 'bg-neutral-50';
 			}
 			return 'bg-linear-to-b from-neutral-900 to-transparent';
@@ -27,9 +33,9 @@ const createNavbarStore = () => {
 	);
 
 	const largeLogoSrc = derived(
-		[isMobileMenuOpen, isMenuHovered, isTransparentPath, isAtTop],
-		([$isMobileMenuOpen, $isMenuHovered, $isTransparentPath, $isAtTop]) => {
-			if ($isMobileMenuOpen || $isMenuHovered || !$isTransparentPath) {
+		[isMobileMenuOpen, isMenuHovered, isTransparentPath, isAtTop, isErrorPage],
+		([$isMobileMenuOpen, $isMenuHovered, $isTransparentPath, $isAtTop, $isErrorPage]) => {
+			if ($isMobileMenuOpen || $isMenuHovered || (!$isTransparentPath && !$isErrorPage)) {
 				return '/images/logo-b.svg';
 			}
 			return $isAtTop ? '/images/logo-w.svg' : '/images/logo-b.svg';
@@ -37,9 +43,9 @@ const createNavbarStore = () => {
 	);
 
 	const smallLogoSrc = derived(
-		[isMobileMenuOpen, isMenuHovered, isTransparentPath, isAtTop],
-		([$isMobileMenuOpen, $isMenuHovered, $isTransparentPath, $isAtTop]) => {
-			if ($isMobileMenuOpen || $isMenuHovered || !$isTransparentPath) {
+		[isMobileMenuOpen, isMenuHovered, isTransparentPath, isAtTop, isErrorPage],
+		([$isMobileMenuOpen, $isMenuHovered, $isTransparentPath, $isAtTop, $isErrorPage]) => {
+			if ($isMobileMenuOpen || $isMenuHovered || (!$isTransparentPath && !$isErrorPage)) {
 				return '/images/logo-b.svg';
 			}
 			return $isAtTop ? '/images/logo-w.svg' : '/images/logo-b.svg';
@@ -47,18 +53,21 @@ const createNavbarStore = () => {
 	);
 
 	const textColorClass = derived(
-		[isMobileMenuOpen, isMenuHovered, isTransparentPath, isAtTop],
-		([$isMobileMenuOpen, $isMenuHovered, $isTransparentPath, $isAtTop]) => {
-			if ($isMobileMenuOpen || $isMenuHovered || !$isTransparentPath) {
+		[isMobileMenuOpen, isMenuHovered, isTransparentPath, isAtTop, isErrorPage],
+		([$isMobileMenuOpen, $isMenuHovered, $isTransparentPath, $isAtTop, $isErrorPage]) => {
+			if ($isMobileMenuOpen || $isMenuHovered || (!$isTransparentPath && !$isErrorPage)) {
 				return 'text-neutral-800';
 			}
 			return $isAtTop ? 'text-neutral-50' : 'text-neutral-800';
 		}
 	);
 
-	const stickyClass = derived(isTransparentPath, ($isTransparentPath) => {
-		return $isTransparentPath ? 'fixed' : 'sticky';
-	});
+	const stickyClass = derived(
+		[isTransparentPath, isErrorPage],
+		([$isTransparentPath, $isErrorPage]) => {
+			return $isTransparentPath || $isErrorPage ? 'fixed' : 'sticky';
+		}
+	);
 
 	return {
 		isMenuHovered,
@@ -66,6 +75,7 @@ const createNavbarStore = () => {
 		isScrollingDown,
 		lastScrollY,
 		isAtTop,
+		isErrorPage,
 		isTransparentPath,
 		backgroundClass,
 		largeLogoSrc,
