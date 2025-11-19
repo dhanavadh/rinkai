@@ -28,6 +28,6 @@
     src={imageSrc}
     alt={title}
     class="absolute w-full h-full object-cover brightness-70"
-    loading="lazy"
+    fetchpriority="high"
   />
 </div>

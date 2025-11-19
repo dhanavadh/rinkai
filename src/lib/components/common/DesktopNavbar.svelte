@@ -34,11 +34,15 @@
     </a>
 
     <div class={`flex items-center gap-4 ${$textColorClass}`}>
-      <a href="/status" class="link-underline">
+      <a
+        href="/status"
+        class="link-underline"
+        aria-label="Instagram profile"
+      >
         <Instagram />
       </a>
 
-      <a href="/about" class="link-underline">
+      <a href="/about" class="link-underline" aria-label="Contact us via email">
         <Mail />
       </a>
     </div>
