@@ -27,7 +27,7 @@
 
 <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 p-6">
 	<a href="/" class="flex items-center gap-4">
-		<img src={$smallLogoSrc} alt="Rinkai Logo" width="100" height="100" class="h-8 w-fit" />
+		<img src={$smallLogoSrc} alt="Rinkai Logo" width="835" height="128" class="h-8 w-full" />
 	</a>
 	<button on:click={toggleMobileMenu} class={`${$textColorClass}`} aria-label="Open mobile menu">
 		<Menu />
@@ -39,7 +39,7 @@
 >
 	<div class="flex h-full flex-col">
 		<div class="flex items-center justify-between border-b border-neutral-200 p-6">
-			<img src={$smallLogoSrc} alt="Rinkai Logo" width="100" height="100" class="h-8 w-fit" />
+			<img src={$smallLogoSrc} alt="Rinkai Logo" width="835" height="128" class="h-8 w-fit" />
 			<button on:click={toggleMobileMenu} aria-label="Close mobile menu">
 				<X />
 			</button>
