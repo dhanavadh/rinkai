@@ -10,18 +10,18 @@ import Lightbulb from 'lucide-svelte/icons/lightbulb';
 import BarChart from 'lucide-svelte/icons/bar-chart';
 
 const icons = {
-  Code2,
-  FileText,
-  Bot,
-  Truck,
-  Train,
-  IdCardLanyard: Contact2,
-  Briefcase,
-  Users,
-  Lightbulb,
-  BarChart,
+	Code2,
+	FileText,
+	Bot,
+	Truck,
+	Train,
+	IdCardLanyard: Contact2,
+	Briefcase,
+	Users,
+	Lightbulb,
+	BarChart
 };
 
 export function getIcon(name: string) {
-  return icons[name];
+	return icons[name];
 }

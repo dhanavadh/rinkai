@@ -7,7 +7,7 @@
 }
 
 .link-underline {
-    @apply hover:underline underline-offset-4;
+	@apply underline-offset-4 hover:underline;
 }
 
 .ibm-plex-sans-thai-thin {
