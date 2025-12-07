@@ -2,7 +2,7 @@ import { writable, derived } from 'svelte/store';
 import { page } from '$app/stores';
 
 // Configuration
-const TRANSPARENT_PATHS = ['/careers', '/services'];
+const TRANSPARENT_PATHS = ['/articles', '/services'];
 
 // Base stores
 export const isMenuHovered = writable(false);

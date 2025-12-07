@@ -13,12 +13,12 @@ export const menuConfig: MenuConfig = {
 			megaMenu: 'solutions'
 		},
 		{
-			title: 'About Us',
-			href: '/about'
+			title: 'Articles',
+			href: '/articles'
 		},
 		{
-			title: 'Careers',
-			href: '/careers'
+			title: 'About Us',
+			href: '/about'
 		}
 	],
 	megaMenus: {
