@@ -56,11 +56,9 @@
 		</div>
 
 		<div class={`flex items-center gap-4 ${$textColorClass}`}>
-			<a href="/services" class="link-underline"> Services </a>
+			<a href="/services" class="link-underline">Console</a>
 
 			<a href="/status" class="link-underline"> Status </a>
-
-			<a href="/about" class="link-underline"> About Us </a>
 		</div>
 	</div>
 </div>

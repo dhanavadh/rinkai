@@ -10,6 +10,13 @@
 	@apply underline-offset-4 hover:underline;
 }
 
+@utility no-scrollbar {
+	@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+body {
+	@apply bg-stone-50;
+}
 .ibm-plex-sans-thai-thin {
 	font-family: 'IBM Plex Sans Thai', sans-serif;
 	font-weight: 100;

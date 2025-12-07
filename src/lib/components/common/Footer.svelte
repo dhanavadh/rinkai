@@ -1,33 +1,110 @@
-<div class="w-full items-center justify-between font-sans">
-	<div
-		class="mx-auto flex max-w-7xl flex-col-reverse items-start justify-between gap-8 px-6 py-12 lg:flex-row"
-	>
-		<div class="flex max-w-64 flex-col items-start text-neutral-600">
-			<img src="/images/logo-b.svg" alt="Rinkai Logo" class="h-8 w-48" width="100" height="100" />
-			<div class="mt-4 flex flex-col items-start gap-2">
-				<p>A creative studio crafting digital experiences with passion and ❤️.</p>
+<script lang="ts">
+	import { Linkedin, Twitter, Youtube } from 'lucide-svelte';
+
+	interface FooterLink {
+		label: string;
+		href: string;
+	}
+
+	interface FooterGroup {
+		title: string;
+		links: FooterLink[];
+	}
+
+	const footerGroups: FooterGroup[] = [
+		{
+			title: 'Products',
+			links: [
+				{ label: 'Business Solutions', href: '/services' },
+				{ label: 'Digital Experience', href: '/services' },
+				{ label: 'Website Development', href: '/services' },
+				{ label: 'CRM Integration', href: '/services' },
+				{ label: 'SEO Management', href: '/services' }
+			]
+		},
+		{
+			title: 'Solutions',
+			links: [
+				{ label: 'E-commerce', href: '/solutions' },
+				{ label: 'Analytics', href: '/solutions' },
+				{ label: 'Automation', href: '/solutions' },
+				{ label: 'Marketing', href: '/solutions' }
+			]
+		},
+		{
+			title: 'Learn',
+			links: [
+				{ label: 'Blog', href: '/blog' },
+				{ label: 'Case Studies', href: '/cases' },
+				{ label: 'Documentation', href: '/docs' },
+				{ label: 'Resources', href: '/resources' }
+			]
+		},
+		{
+			title: 'Company',
+			links: [
+				{ label: 'About Rinkai', href: '/about' },
+				{ label: 'Careers', href: '/careers' },
+				{ label: 'Contact', href: '/contact' },
+				{ label: 'Privacy Policy', href: '/privacy' },
+				{ label: 'Terms of Service', href: '/terms' }
+			]
+		}
+	];
+
+	const socialLinks = [
+		{ icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+		{ icon: Twitter, href: 'https://x.com', label: 'X (Twitter)' },
+		{ icon: Youtube, href: 'https://youtube.com', label: 'YouTube' }
+	];
+</script>
+
+<footer class="bg-stone-900 text-stone-300">
+	<div class="mx-auto max-w-7xl px-6 py-12">
+		<div class="grid grid-cols-12 gap-8">
+			<!-- Logo and Social Links -->
+			<div class="col-span-12 flex flex-col gap-6 md:col-span-3">
+				<img src="/images/logo-w.svg" alt="Rinkai Logo" class="h-8 w-fit" />
+				<div class="mt-auto flex flex-col gap-4">
+					<p class="text-sm text-stone-500">© 2025 Rinkai Industries</p>
+					<ul class="flex gap-3">
+						{#each socialLinks as social}
+							<li>
+								<a
+									href={social.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={social.label}
+									class="flex h-6 w-6 items-center justify-center text-stone-400 transition-colors hover:text-white"
+								>
+									<social.icon size={20} />
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
 			</div>
+
+			<!-- Footer Links -->
+			<nav class="col-span-12 grid grid-cols-2 gap-8 md:col-span-9 md:grid-cols-4">
+				{#each footerGroups as group}
+					<div class="flex flex-col gap-4">
+						<h3 class="text-sm font-medium text-white">{group.title}</h3>
+						<ul class="flex flex-col gap-2">
+							{#each group.links as link}
+								<li>
+									<a
+										href={link.href}
+										class="text-sm text-stone-400 transition-colors hover:text-white"
+									>
+										{link.label}
+									</a>
+								</li>
+							{/each}
+						</ul>
+					</div>
+				{/each}
+			</nav>
 		</div>
-		<section class="flex flex-col items-start gap-4 text-neutral-600 lg:flex-row lg:gap-8">
-			<div class="flex flex-col items-start gap-1">
-				<a href="/services" class="link-underline"> Business Solution </a>
-				<a href="/about" class="link-underline"> Digital Experience </a>
-			</div>
-			<div class="flex flex-col items-start gap-1">
-				<a href="/about" class="link-underline"> Website Development </a>
-				<a href="/about" class="link-underline"> CRM </a>
-				<a href="/contact" class="link-underline"> SEO Management </a>
-			</div>
-			<div class="flex flex-col items-start gap-1">
-				<a href="/about" class="link-underline"> Service </a>
-				<a href="/about" class="link-underline"> About Rinkai </a>
-				<a href="/about" class="link-underline"> Documentation </a>
-			</div>
-		</section>
 	</div>
-	<section
-		class="flex w-full flex-col items-center justify-center bg-neutral-200 p-2 text-neutral-800"
-	>
-		<p>© 2025 Rinkai Industries</p>
-	</section>
-</div>
+</footer>

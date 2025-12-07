@@ -1,1 +1,11 @@
-<h1>Services</h1>
+<script>
+	import HalfBanner from '$lib/components/common/HalfBanner.svelte';
+</script>
+
+<HalfBanner
+	title="Solutions for Business"
+	description="สร้าง performance ให้ธุรกิจของคุณได้ดียิ่งขึ้น"
+	imageSrc="/images/img_7557.webp"
+	href="/"
+	buttonText="ดูเพิ่มเติม"
+/>

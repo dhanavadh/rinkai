@@ -36,3 +36,11 @@ export type MenuConfig = {
 		[key: string]: MegaMenu;
 	};
 };
+
+export interface SliderItem {
+	id: string | number;
+	title: string;
+	description: string;
+	imageUrl: string;
+	linkUrl: string;
+}

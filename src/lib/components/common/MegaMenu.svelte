@@ -10,7 +10,7 @@
 
 {#if isOpen && menu}
 	<div
-		class={`absolute top-full left-0 flex w-full rounded-b-lg bg-neutral-100 p-8 text-neutral-800 shadow-sm transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+		class={`absolute top-full left-0 flex w-full rounded-b-lg bg-stone-50 p-8 text-neutral-800 shadow-sm transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
 	>
 		<div class="mx-auto flex w-full max-w-7xl items-start justify-between gap-2 px-6">
 			<div class="grid w-1/2 grid-cols-2 gap-4" id="menulist">

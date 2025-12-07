@@ -9,9 +9,6 @@
 	const {
 		isScrollingDown,
 		backgroundClass,
-		largeLogoSrc,
-		smallLogoSrc,
-		textColorClass,
 		stickyClass,
 		isMenuHovered,
 		isMobileMenuOpen,

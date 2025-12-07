@@ -2,7 +2,7 @@ import { writable, derived } from 'svelte/store';
 import { page } from '$app/stores';
 
 export const navbarConfig = {
-	transparentPaths: ['/', '/careers']
+	transparentPaths: ['/', '/careers', '/services']
 };
 
 const createNavbarStore = () => {
@@ -26,7 +26,7 @@ const createNavbarStore = () => {
 				$isMenuHovered ||
 				!$isAtTop
 			) {
-				return 'bg-neutral-50';
+				return 'bg-stone-50';
 			}
 			return 'bg-linear-to-b from-neutral-900 to-transparent';
 		}
