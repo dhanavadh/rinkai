@@ -64,13 +64,34 @@
 </script>
 
 <div class="flex w-full flex-col font-ibm">
-	<Banner
+	<!-- <Banner
 		title="Solutions for Business"
 		description="สร้าง performance ให้ธุรกิจของคุณได้ดียิ่งขึ้น"
-		imageSrc="/images/img_7557.webp"
+		imageSrc="/images/_.webp"
 		href="/"
 		buttonText="ดูเพิ่มเติม"
-	/>
+	/> -->
+
+	<div class="relative flex h-screen w-full font-ibm md:h-[500px]">
+		<div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 p-6">
+			<section class="z-10 mt-16 flex flex-col gap-4">
+				<span class="text-stone-800">
+					<h1 class="mb-2 text-5xl">Digital Solutions for Business</h1>
+					<p class="text-lg">สร้าง performance ให้ธุรกิจของคุณได้ดียิ่งขึ้น</p>
+				</span>
+				<a
+					href="/"
+					class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+				>
+					ดูเพิ่มเติม
+				</a>
+			</section>
+			<section class="flex w-fit items-center justify-center">
+				<AnimatedIcon size={128} />
+			</section>
+		</div>
+		<div class="absolute h-full w-full object-cover brightness-90"></div>
+	</div>
 
 	<div class="mb-12 flex flex-col gap-6">
 		<Section>

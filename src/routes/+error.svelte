@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { navbarStore } from '$lib/stores/navbar';
+	import { isErrorPage } from '$lib/components/navbar';
 	import { onMount, onDestroy } from 'svelte';
 
 	onMount(() => {
-		navbarStore.isErrorPage.set(true);
+		isErrorPage.set(true);
 	});
 
 	onDestroy(() => {
-		navbarStore.isErrorPage.set(false);
+		isErrorPage.set(false);
 	});
 </script>
 

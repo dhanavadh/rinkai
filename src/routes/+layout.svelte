@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import DevNavbar from '$lib/components/common/DevNavbar.svelte';
+	import { Navbar } from '$lib/components/navbar';
 	import Footer from '$lib/components/common/Footer.svelte';
 
 	let { children } = $props();
@@ -47,7 +47,7 @@
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </svelte:head>
 
-<DevNavbar />
+<Navbar />
 
 <main>
 	{@render children()}

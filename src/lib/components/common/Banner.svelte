@@ -24,7 +24,7 @@
 		sizes="100vw"
 		src={imageSrc}
 		alt={title}
-		class="absolute h-full w-full object-cover brightness-70"
+		class="absolute h-full w-full object-cover brightness-90"
 		fetchpriority="high"
 	/>
 </div>
