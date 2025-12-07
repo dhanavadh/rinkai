@@ -222,7 +222,7 @@
 		<Section>
 			<div class="col-span-12 mt-4 mb-4 rounded-2xl bg-stone-200/50 p-32 text-center">
 				<AnimatedIcon class="mb-12" />
-				<h1 class="text-4xl">เพิ่มประสิทธิภาพให้ธุรกิจของคุณ</h1>
+				<h1 class="mb-2 text-4xl">เพิ่มประสิทธิภาพให้ธุรกิจของคุณ</h1>
 				<p>find out more about our business solutions</p>
 			</div>
 		</Section>
