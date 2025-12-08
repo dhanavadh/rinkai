@@ -48,12 +48,12 @@
 	<div class="flex flex-col items-center justify-center gap-6">
 		<span class="flex w-full items-start justify-between" id="product">
 			<div>
-				<p class="text-sm text-neutral-600 md:text-base">{sectionSubtitle}</p>
-				<h2 class="mt-1 mb-2 text-2xl leading-tight text-neutral-900 md:text-4xl">
+				<h2 class="text-section-title">
 					{sectionTitle}
 				</h2>
+				<p class="text-section-subtitle mt-1">{sectionSubtitle}</p>
 			</div>
-			<a href="/" class="text-sm text-neutral-500 md:text-base">ดูทั้งหมด</a>
+			<a href="/" class="link">ดูทั้งหมด</a>
 		</span>
 
 		<div class="relative w-full">
@@ -75,13 +75,13 @@
 						<div class="relative mb-4 h-64 w-52 overflow-hidden rounded-sm md:h-96 md:w-76">
 							<img src={item.imageUrl} alt={item.title} class="h-full w-full object-cover" />
 						</div>
-						<p class="text-sm font-semibold text-neutral-700 md:text-base">{item.title}</p>
-						<p class="mb-2 text-xs text-neutral-400 md:text-sm">
+						<p class="text-card-title">{item.title}</p>
+						<p class="text-card-desc mb-2">
 							{item.description}
 						</p>
-						<a href={item.linkUrl} class="text-xs font-medium text-neutral-600 md:text-sm">
+						<a href={item.linkUrl} class="link-arrow">
 							ดูรายละเอียด
-							<ArrowUpRight class="ml-1 inline-block h-4 w-4" />
+							<ArrowUpRight class="h-4 w-4" />
 						</a>
 					</div>
 				{/each}

@@ -29,14 +29,11 @@
 		<!-- Left Side -->
 		<div class="col-span-12 flex flex-col justify-between md:col-span-5">
 			<div class="mb-6 md:mb-8">
-				<h2 class="mb-2 text-2xl font-medium md:mb-4 md:text-4xl">{title}</h2>
-				<p class="max-w-md text-sm text-stone-600 md:text-base">{description}</p>
+				<h2 class="text-section-title mb-2 md:mb-4">{title}</h2>
+				<p class="text-body max-w-md">{description}</p>
 			</div>
 			<div>
-				<a
-					href={buttonUrl}
-					class="inline-flex items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-stone-700 md:px-6 md:py-3 md:text-base"
-				>
+				<a href={buttonUrl} class="btn-primary">
 					{buttonText}
 				</a>
 			</div>
@@ -44,7 +41,7 @@
 
 		<!-- Right Side - FAQ Accordion -->
 		<div class="col-span-12 md:col-span-7">
-			<h3 class="mb-4 text-sm font-medium md:mb-6">Learn more</h3>
+			<h3 class="text-caption mb-4 font-medium md:mb-6">Learn more</h3>
 			<div class="flex flex-col">
 				{#each learnMoreItems as item, i}
 					<div class="border-t border-stone-300 {i === learnMoreItems.length - 1 ? 'border-b' : ''}">
@@ -52,7 +49,7 @@
 							onclick={() => toggle(i)}
 							class="flex w-full cursor-pointer items-center justify-between py-3 text-left transition-colors hover:text-stone-600 md:py-4"
 						>
-							<h4 class="text-base font-medium md:text-xl">{item.title}</h4>
+							<h4 class="text-card-title">{item.title}</h4>
 							<ChevronDown
 								class="h-5 w-5 shrink-0 transition-transform duration-200 {openIndex === i
 									? 'rotate-180'
@@ -65,12 +62,9 @@
 								: 'grid-rows-[0fr]'}"
 						>
 							<div class="overflow-hidden">
-								<p class="text-sm text-stone-600 md:text-base">{item.content}</p>
+								<p class="text-body">{item.content}</p>
 								{#if item.href}
-									<a
-										href={item.href}
-										class="mt-2 inline-flex items-center text-sm font-medium text-stone-800 hover:underline"
-									>
+									<a href={item.href} class="link-arrow mt-2">
 										ดูเพิ่มเติม →
 									</a>
 								{/if}
