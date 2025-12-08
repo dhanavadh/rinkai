@@ -1,109 +1,24 @@
 <script lang="ts">
 	import { Search, ArrowUpRight } from 'lucide-svelte';
-	import type { Article, ArticleType, BannerSlide } from '$lib/types';
+	import type { ArticleType, BannerSlide } from '$lib/types';
 	import Section from '$lib/components/layout/Section.svelte';
 	import HalfBanner from '$lib/components/layout/HalfBanner.svelte';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 
 	let searchQuery = $state('');
 	let selectedType = $state<ArticleType | 'all'>('all');
 
-	const bannerSlides: BannerSlide[] = [
-		{
-			id: 1,
-			title: 'Articles',
-			description: 'Explore our collection of articles, research papers, and insights',
-			imageSrc: '/brands/iconv-1.webp',
-			href: '/articles',
-			buttonText: 'Browse All'
-		},
-		{
-			id: 2,
-			title: 'Research Papers',
-			description: 'Deep dive into our latest research and case studies',
-			imageSrc: '/brands/iconv-2.webp',
-			href: '/articles?type=research',
-			buttonText: 'View Research'
-		},
-		{
-			id: 3,
-			title: 'Industry Insights',
-			description: 'Stay updated with the latest trends and best practices',
-			imageSrc: '/brands/iconv-3.webp',
-			href: '/articles?type=review',
-			buttonText: 'Read More'
-		},
-		{
-			id: 4,
-			title: 'Industry Insights',
-			description: 'Stay updated with the latest trends and best practices',
-			imageSrc: '/brands/iconv-4.webp',
-			href: '/articles?type=review',
-			buttonText: 'Read More'
-		}
-	];
-
-	const articles: Article[] = [
-		{
-			id: 1,
-			title: 'Lean production, Toyota Production System and Kaizen philosophy',
-			journal: 'The TQM Journal',
-			date: '10 April 2018',
-			authors: ['Andrea Chiarini', 'Claudio Baccarani', 'Vittorio Mascherpa'],
-			type: 'research',
-			hasFullAccess: false,
-			href: '/articles/1'
-		},
-		{
-			id: 2,
-			title: 'Report of 43rd Annual Meeting of the Pacific Association of Pediatric Surgeons',
-			journal: 'Journal of Pediatric Surgery',
-			date: 'December 2010',
-			authors: ['Donald B. Shaul'],
-			type: 'review',
-			hasFullAccess: true,
-			href: '/articles/2'
-		},
-		{
-			id: 3,
-			title: 'Life events, philosophy, spirituality and gastronomy experience',
-			journal: 'International Journal of Gastronomy and Hospitality Management',
-			date: '31 July 2022',
-			authors: ['Maria Santos', 'John Williams'],
-			type: 'research',
-			hasFullAccess: false,
-			href: '/articles/3'
-		},
-		{
-			id: 4,
-			title: 'Digital Transformation in Modern Business: A Comprehensive Study',
-			journal: 'Business Technology Review',
-			date: '15 March 2023',
-			authors: ['Sarah Johnson', 'Michael Chen', 'Emma Watson'],
-			type: 'book-chapter',
-			hasFullAccess: true,
-			href: '/articles/4'
-		},
-		{
-			id: 5,
-			title: 'Advances in Machine Learning for Healthcare Applications',
-			journal: 'AI in Medicine Conference',
-			date: '8 September 2022',
-			authors: ['Dr. James Lee', 'Prof. Anna Kim'],
-			type: 'conference',
-			hasFullAccess: false,
-			href: '/articles/5'
-		},
-		{
-			id: 6,
-			title: 'Sustainable Supply Chain Management: Best Practices',
-			journal: 'Operations Management Quarterly',
-			date: '22 November 2021',
-			authors: ['Robert Brown', 'Lisa Garcia'],
-			type: 'review',
-			hasFullAccess: true,
-			href: '/articles/6'
-		}
-	];
+	// Convert latest articles to banner slides
+	const bannerSlides: BannerSlide[] = data.articles.slice(0, 5).map((article) => ({
+		id: article.slug,
+		title: article.title,
+		description: article.abstract,
+		imageSrc: article.heroImage,
+		href: `/articles/${article.slug}`,
+		buttonText: 'Read More'
+	}));
 
 	const categories: { value: ArticleType | 'all'; label: string }[] = [
 		{ value: 'all', label: 'All' },
@@ -124,7 +39,7 @@
 	}
 
 	const filteredArticles = $derived.by(() => {
-		let result = articles;
+		let result = data.articles;
 
 		if (searchQuery) {
 			const query = searchQuery.toLowerCase();
@@ -194,7 +109,7 @@
 			<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 				{#each filteredArticles as article}
 					<a
-						href={article.href}
+						href="/articles/{article.slug}"
 						class="group flex flex-col rounded-2xl border border-stone-200 bg-white p-6 transition-all hover:border-stone-300 hover:shadow-sm"
 					>
 						<!-- Type Badge -->

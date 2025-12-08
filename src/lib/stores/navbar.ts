@@ -2,7 +2,7 @@ import { writable, derived } from 'svelte/store';
 import { page } from '$app/stores';
 
 // Configuration
-const TRANSPARENT_PATHS = ['/articles', '/services'];
+const TRANSPARENT_PATHS = ['/articles', '/articles/*', '/services'];
 
 // Base stores
 export const isMenuHovered = writable(false);
@@ -12,9 +12,18 @@ export const lastScrollY = writable(0);
 export const isAtTop = writable(true);
 export const isErrorPage = writable(false);
 
+// Helper function to match paths with wildcards
+function matchPath(pathname: string, pattern: string): boolean {
+	if (pattern.endsWith('/*')) {
+		const base = pattern.slice(0, -2);
+		return pathname === base || pathname.startsWith(base + '/');
+	}
+	return pathname === pattern;
+}
+
 // Derived stores
 export const isTransparentPath = derived(page, ($page) =>
-	TRANSPARENT_PATHS.includes($page.url.pathname)
+	TRANSPARENT_PATHS.some((pattern) => matchPath($page.url.pathname, pattern))
 );
 
 // Helper: determines if navbar should use dark theme (light text on transparent)
