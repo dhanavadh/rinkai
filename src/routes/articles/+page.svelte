@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Banner from '$lib/components/common/Banner.svelte';
+	import Banner from '$lib/components/layout/Banner.svelte';
 </script>
 
 <Banner

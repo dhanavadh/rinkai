@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { menuConfig } from '$lib/config/menu';
-	import { logoSrc, textColorClass, isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } from './store';
+	import { logoSrc, textColorClass, isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } from '$lib/stores/navbar';
 	import SubMenu from './SubMenu.svelte';
 	import Menu from 'lucide-svelte/icons/menu';
 	import X from 'lucide-svelte/icons/x';

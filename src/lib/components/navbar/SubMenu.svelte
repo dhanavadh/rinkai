@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { menuConfig } from '$lib/config/menu';
-	import { getIcon } from '$lib/icons';
+	import { getIcon } from '$lib/utils/icons';
 	import type { NavItem } from '$lib/types';
 
 	interface Props {

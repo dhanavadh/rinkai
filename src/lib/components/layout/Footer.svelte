@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Linkedin, Twitter, Youtube } from 'lucide-svelte';
+	import { Instagram, Linkedin, MailIcon, Twitter, Youtube } from 'lucide-svelte';
 
 	interface FooterLink {
 		label: string;
@@ -53,9 +53,8 @@
 	];
 
 	const socialLinks = [
-		{ icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-		{ icon: Twitter, href: 'https://x.com', label: 'X (Twitter)' },
-		{ icon: Youtube, href: 'https://youtube.com', label: 'YouTube' }
+		{ icon: Instagram, href: 'https://linkedin.com', label: 'LinkedIn' },
+		{ icon: MailIcon, href: 'https://x.com', label: 'X (Twitter)' }
 	];
 </script>
 

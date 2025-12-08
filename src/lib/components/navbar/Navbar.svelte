@@ -12,7 +12,7 @@
 		isAtTop,
 		lastScrollY,
 		setMenuHovered
-	} from './store';
+	} from '$lib/stores/navbar';
 
 	let hoveredMenu: string | null = null;
 

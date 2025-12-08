@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { chunk } from '$lib/utils/chunk';
-	import { getIcon } from '$lib/icons';
+	import { getIcon } from '$lib/utils/icons';
 	import type { MegaMenu as MegaMenuType } from '$lib/types';
 
 	interface Props {

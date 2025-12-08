@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { menuConfig } from '$lib/config/menu';
-	import { logoSrc, textColorClass } from './store';
+	import { logoSrc, textColorClass } from '$lib/stores/navbar';
 	import ChevronDown from 'lucide-svelte/icons/chevron-down';
 	import Instagram from 'lucide-svelte/icons/instagram';
 	import Mail from 'lucide-svelte/icons/mail';

@@ -1,5 +1,5 @@
 <script>
-	import HalfBanner from '$lib/components/common/HalfBanner.svelte';
+	import HalfBanner from '$lib/components/layout/HalfBanner.svelte';
 </script>
 
 <HalfBanner

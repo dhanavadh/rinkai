@@ -1,9 +1,9 @@
 <script lang="ts">
-	import AnimatedIcon from '$lib/components/common/AnimatedIcon.svelte';
-	import Banner from '$lib/components/common/Banner.svelte';
-	import PromoBanner from '$lib/components/common/PromoBanner.svelte';
-	import Section from '$lib/components/common/Section.svelte';
-	import Slider from '$lib/components/common/Slider.svelte';
+	import AnimatedIcon from '$lib/components/ui/AnimatedIcon.svelte';
+	import Banner from '$lib/components/layout/Banner.svelte';
+	import PromoBanner from '$lib/components/ui/PromoBanner.svelte';
+	import Section from '$lib/components/layout/Section.svelte';
+	import Slider from '$lib/components/ui/Slider.svelte';
 	import type { SliderItem } from '$lib/types';
 	import {
 		ArrowBigDown,
