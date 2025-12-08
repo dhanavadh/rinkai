@@ -49,7 +49,7 @@
 
 <Navbar />
 
-<main>
+<main class="overflow-x-hidden">
 	{@render children()}
 </main>
 

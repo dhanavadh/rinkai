@@ -55,7 +55,7 @@
 
 	<!-- Back Link -->
 	<Section>
-		<div class="col-span-12">
+		<div class="col-span-12 lg:col-span-8 lg:col-start-3">
 			<a
 				href="/articles"
 				class="inline-flex items-center gap-2 text-sm text-stone-500 transition-colors hover:text-stone-800"

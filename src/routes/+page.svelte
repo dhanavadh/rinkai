@@ -97,26 +97,26 @@
 	<div class="mb-12 flex flex-col gap-6">
 		<Section>
 			<div class="col-span-12 mt-4 mb-4">
-				<h1 class="text-4xl">Success Stories</h1>
-				<p>find out more about our business solutions</p>
+				<h1 class="text-2xl md:text-4xl">Success Stories</h1>
+				<p class="text-sm md:text-base">find out more about our business solutions</p>
 			</div>
 
-			<div class="col-span-12 md:col-span-8">
+			<div class="col-span-8">
 				<img
 					src="/usecase/iconv.webp"
 					alt="Business Solutions"
-					class="h-full w-full rounded-md object-cover"
+					class="h-48 w-full rounded-md object-cover md:h-full"
 				/>
 			</div>
 
-			<div class="col-span-12 flex flex-col justify-start gap-4 md:col-span-4">
+			<div class="col-span-4 flex flex-col justify-start gap-4">
 				<div>
-					<h2 class="text-2xl font-medium">Ads Analytics in Ecommerce Platform</h2>
-					<p>Ads Analytics</p>
+					<h2 class="text-base font-medium md:text-2xl">Ads Analytics in Ecommerce Platform</h2>
+					<p class="text-sm md:text-base">Ads Analytics</p>
 				</div>
 				<a
 					href="/"
-					class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+					class="flex w-fit items-center rounded-full bg-stone-800 px-3 py-1.5 text-sm font-medium text-white md:px-4 md:py-2 md:text-base"
 				>
 					ดูเพิ่มเติม
 				</a>
@@ -125,44 +125,44 @@
 
 		<Section>
 			<div class="col-span-12 mt-4 mb-4">
-				<h1 class="text-4xl">Services</h1>
-				<p>find out more about our business solutions</p>
+				<h1 class="text-2xl md:text-4xl">Services</h1>
+				<p class="text-sm md:text-base">find out more about our business solutions</p>
 			</div>
 
-			<div class="col-span-12 md:col-span-6">
+			<div class="col-span-6">
 				<img
 					src="/usecase/iconv.webp"
 					alt="Business Solutions"
-					class="mb-4 h-64 w-full rounded-md object-cover"
+					class="mb-4 h-40 w-full rounded-md object-cover md:h-64"
 				/>
 				<div class="flex flex-col gap-4">
 					<div>
-						<h2 class="text-2xl font-medium">Ads Analytics in Ecommerce Platform</h2>
-						<p>Ads Analytics</p>
+						<h2 class="text-lg font-medium md:text-2xl">Ads Analytics in Ecommerce Platform</h2>
+						<p class="text-sm md:text-base">Ads Analytics</p>
 					</div>
 					<a
 						href="/"
-						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white md:text-base"
 					>
 						ดูเพิ่มเติม
 					</a>
 				</div>
 			</div>
 
-			<div class="col-span-12 md:col-span-6">
+			<div class="col-span-6">
 				<img
 					src="/usecase/iconv.webp"
 					alt="Business Solutions"
-					class="mb-4 h-64 w-full rounded-md object-cover"
+					class="mb-4 h-40 w-full rounded-md object-cover md:h-64"
 				/>
 				<div class="flex flex-col gap-4">
 					<div>
-						<h2 class="text-2xl font-medium">Ads Analytics in Ecommerce Platform</h2>
-						<p>Ads Analytics</p>
+						<h2 class="text-lg font-medium md:text-2xl">Ads Analytics in Ecommerce Platform</h2>
+						<p class="text-sm md:text-base">Ads Analytics</p>
 					</div>
 					<a
 						href="/"
-						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white md:text-base"
 					>
 						ดูเพิ่มเติม
 					</a>
@@ -171,69 +171,64 @@
 		</Section>
 		<Section>
 			<div class="col-span-12 mt-4 mb-4">
-				<h1 class="text-4xl">Services</h1>
-				<p>find out more about our business solutions</p>
+				<h1 class="text-2xl md:text-4xl">Services</h1>
+				<p class="text-sm md:text-base">find out more about our business solutions</p>
 			</div>
 
-			<div class="col-span-12 rounded-md p-4 md:col-span-4">
-				<!-- <img
-					src="/usecase/iconv.webp"
-					alt="Business Solutions"
-					class="mb-4 h-64 w-full rounded-md object-cover"
-				/> -->
+			<div class="col-span-6 rounded-md p-4 md:col-span-4">
 				<div
-					class="mb-4 flex h-64 w-full items-center justify-center rounded-md bg-amber-50 object-cover"
+					class="mb-4 flex h-40 w-full items-center justify-center rounded-md bg-amber-50 md:h-64"
 				>
-					<ChartSpline class="h-48 w-full text-amber-400/50" strokeWidth={1} />
+					<ChartSpline class="h-24 w-full text-amber-400/50 md:h-48" strokeWidth={1} />
 				</div>
 				<div class="flex flex-col gap-4">
 					<div>
-						<h2 class="text-2xl font-medium">Ads Analytics in Ecommerce Platform</h2>
-						<p>Ads Analytics</p>
+						<h2 class="text-lg font-medium md:text-2xl">Ads Analytics in Ecommerce Platform</h2>
+						<p class="text-sm md:text-base">Ads Analytics</p>
 					</div>
 					<a
 						href="/"
-						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white md:text-base"
 					>
 						ดูเพิ่มเติม
 					</a>
 				</div>
 			</div>
 
-			<div class="col-span-12 rounded-lg p-4 md:col-span-4">
+			<div class="col-span-6 rounded-lg p-4 md:col-span-4">
 				<div
-					class="mb-4 flex h-64 w-full items-center justify-center rounded-md bg-stone-100 object-cover"
+					class="mb-4 flex h-40 w-full items-center justify-center rounded-md bg-stone-100 md:h-64"
 				>
-					<PanelsTopLeftIcon class="h-48 w-full text-stone-400/50" strokeWidth={1} />
+					<PanelsTopLeftIcon class="h-24 w-full text-stone-400/50 md:h-48" strokeWidth={1} />
 				</div>
 				<div class="flex flex-col gap-4">
 					<div>
-						<h2 class="text-2xl font-medium">Ads Analytics in Ecommerce Platform</h2>
-						<p>Ads Analytics</p>
+						<h2 class="text-lg font-medium md:text-2xl">Ads Analytics in Ecommerce Platform</h2>
+						<p class="text-sm md:text-base">Ads Analytics</p>
 					</div>
 					<a
 						href="/"
-						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white md:text-base"
 					>
 						ดูเพิ่มเติม
 					</a>
 				</div>
 			</div>
 
-			<div class="col-span-12 rounded-md p-4 md:col-span-4">
+			<div class="col-span-6 rounded-md p-4 md:col-span-4">
 				<div
-					class="mb-4 flex h-64 w-full items-center justify-center rounded-md bg-indigo-50 object-cover"
+					class="mb-4 flex h-40 w-full items-center justify-center rounded-md bg-indigo-50 md:h-64"
 				>
-					<Repeat class="h-48 w-full text-indigo-700/50" strokeWidth={1} />
+					<Repeat class="h-24 w-full text-indigo-700/50 md:h-48" strokeWidth={1} />
 				</div>
 				<div class="flex flex-col gap-4">
 					<div>
-						<h2 class="text-2xl font-medium">Ads Analytics in Ecommerce Platform</h2>
-						<p>Ads Analytics</p>
+						<h2 class="text-lg font-medium md:text-2xl">Ads Analytics in Ecommerce Platform</h2>
+						<p class="text-sm md:text-base">Ads Analytics</p>
 					</div>
 					<a
 						href="/"
-						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
+						class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white md:text-base"
 					>
 						ดูเพิ่มเติม
 					</a>
@@ -242,9 +237,9 @@
 		</Section>
 
 		<Section>
-			<div class="col-span-12 mt-4 mb-4 rounded-2xl bg-stone-200/50 p-32 text-center">
+			<div class="col-span-12 mt-4 mb-4 rounded-2xl bg-stone-200/50 p-8 py-16 text-center md:p-32">
 				<AnimatedIcon class="mb-12" />
-				<h1 class="mb-2 text-4xl">เพิ่มประสิทธิภาพให้ธุรกิจของคุณ</h1>
+				<h1 class="mb-2 text-2xl md:text-4xl">เพิ่มประสิทธิภาพให้ธุรกิจของคุณ</h1>
 				<p>find out more about our business solutions</p>
 			</div>
 		</Section>
