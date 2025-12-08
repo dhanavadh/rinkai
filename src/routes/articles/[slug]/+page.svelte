@@ -11,98 +11,50 @@
 	function getTypeLabel(type: ArticleType): string {
 		const labels: Record<ArticleType, string> = {
 			research: 'Research',
-			review: 'Review',
-			'book-chapter': 'Book Chapter',
-			conference: 'Conference'
+			usecase: 'Use Case',
+			other: 'Other'
 		};
 		return labels[type];
 	}
 </script>
 
 <div class="flex w-full flex-col font-ibm">
-	<!-- Hero Section -->
-	<div class="relative h-[400px] w-full overflow-hidden md:h-[500px]">
+	<!-- Banner Image -->
+	<div class="h-48 w-full overflow-hidden md:h-64">
 		<img
 			src={article.heroImage}
 			alt={article.title}
-			class="absolute inset-0 h-full w-full object-cover brightness-50"
+			class="h-full w-full object-cover"
 		/>
-		<div class="relative z-10 flex h-full flex-col justify-end">
-			<div class="mx-auto w-full max-w-7xl p-6">
-				<div class="max-w-3xl">
-					<!-- Category Badge -->
-					<span
-						class="mb-4 inline-block rounded-full bg-white/20 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm"
-					>
-						{getTypeLabel(article.type)}
-					</span>
-
-					<!-- Title -->
-					<h1 class="mb-4 text-3xl font-medium text-white md:text-5xl">
-						{article.title}
-					</h1>
-
-					<!-- Meta -->
-					<div class="flex flex-wrap items-center gap-4 text-white/80">
-						<span>{article.date}</span>
-						<span class="hidden md:inline">•</span>
-						<span class="hidden md:inline">{article.journal}</span>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 
-	<!-- Back Link -->
-	<Section>
-		<div class="col-span-12 lg:col-span-8 lg:col-start-3">
-			<a
-				href="/articles"
-				class="inline-flex items-center gap-2 text-sm text-stone-500 transition-colors hover:text-stone-800"
-			>
-				<ArrowLeft class="h-4 w-4" />
-				Back to Articles
-			</a>
-		</div>
-	</Section>
-
-	<!-- Article Content -->
+	<!-- Article Section -->
 	<Section gap={false}>
 		<div class="col-span-12 lg:col-span-8 lg:col-start-3">
-			<!-- Abstract -->
-			<div class="mb-12 border-b border-stone-200 pb-12">
-				<h2 class="mb-4 text-lg font-medium text-stone-800">Abstract</h2>
-				<p class="font-ibm-looped text-lg leading-relaxed text-stone-600">
-					{article.abstract}
-				</p>
-			</div>
+			<!-- Breadcrumb -->
+			<nav class="mb-6 flex shrink-0 items-center gap-2 text-sm">
+				<a href="/articles" class="shrink-0 text-stone-600 transition-colors hover:text-stone-900">All Articles</a>
+				<span class="shrink-0 text-stone-400">›</span>
+				<span class="shrink-0 font-medium text-stone-600">{getTypeLabel(article.type)}</span>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="mb-2 text-3xl font-bold text-stone-900 md:text-4xl">
+				{article.title}
+			</h1>
+
+			<!-- Updated date -->
+			<p class="mb-6 text-sm text-stone-400">{article.date}</p>
+
+			<!-- Abstract/Description -->
+			<p class="mb-6 font-ibm-looped text-base leading-relaxed text-stone-600">
+				{article.abstract}
+			</p>
 
 			<!-- Article Body from MDX -->
 			<article class="prose-article">
 				<Content />
 			</article>
-
-			<!-- Tags / Access -->
-			<div class="mt-12 flex flex-wrap items-center gap-3 border-t border-stone-200 pt-8">
-				<span class="rounded-full bg-stone-100 px-3 py-1 text-sm text-stone-600">
-					{getTypeLabel(article.type)}
-				</span>
-				{#if article.hasFullAccess}
-					<span class="rounded-full bg-green-50 px-3 py-1 text-sm text-green-700">
-						Full Access
-					</span>
-				{:else}
-					<span class="rounded-full bg-amber-50 px-3 py-1 text-sm text-amber-700">
-						Limited Access
-					</span>
-				{/if}
-			</div>
-
-			<!-- Authors -->
-			<div class="mt-8 border-t border-stone-200 pt-8">
-				<p class="mb-2 text-sm font-medium text-stone-500">Authors</p>
-				<p class="text-stone-800">{article.authors.join(', ')}</p>
-			</div>
 		</div>
 	</Section>
 

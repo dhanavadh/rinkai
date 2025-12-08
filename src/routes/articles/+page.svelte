@@ -23,17 +23,15 @@
 	const categories: { value: ArticleType | 'all'; label: string }[] = [
 		{ value: 'all', label: 'All' },
 		{ value: 'research', label: 'Research' },
-		{ value: 'review', label: 'Review' },
-		{ value: 'book-chapter', label: 'Book' },
-		{ value: 'conference', label: 'Conference' }
+		{ value: 'usecase', label: 'Use Case' },
+		{ value: 'other', label: 'Other' }
 	];
 
 	function getTypeLabel(type: ArticleType): string {
 		const labels: Record<ArticleType, string> = {
 			research: 'Research',
-			review: 'Review',
-			'book-chapter': 'Book',
-			conference: 'Conference'
+			usecase: 'Use Case',
+			other: 'Other'
 		};
 		return labels[type];
 	}
