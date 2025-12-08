@@ -73,7 +73,15 @@
 				{#each items as item (item.id)}
 					<div class="w-52 shrink-0 md:w-76" id="product-{item.id}">
 						<div class="relative mb-4 h-64 w-52 overflow-hidden rounded-sm md:h-96 md:w-76">
-							<img src={item.imageUrl} alt={item.title} class="h-full w-full object-cover" />
+							<img
+								src={item.imageUrl}
+								alt={item.title}
+								width="800"
+								height="600"
+								loading="lazy"
+								decoding="async"
+								class="h-full w-full object-cover"
+							/>
 						</div>
 						<p class="text-card-title">{item.title}</p>
 						<p class="text-card-desc mb-2">

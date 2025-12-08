@@ -127,6 +127,10 @@
 				<img
 					src="/usecase/iconv.webp"
 					alt="Business Solutions"
+					width="800"
+					height="600"
+					loading="lazy"
+					decoding="async"
 					class="h-card-image-lg w-full rounded-md object-cover md:h-full"
 				/>
 			</div>
@@ -150,6 +154,10 @@
 				<img
 					src="/usecase/iconv.webp"
 					alt="Business Solutions"
+					width="800"
+					height="600"
+					loading="lazy"
+					decoding="async"
 					class="mb-4 h-card-image-lg w-full rounded-md object-cover"
 				/>
 				<div class="flex flex-col gap-4">
@@ -165,6 +173,10 @@
 				<img
 					src="/usecase/iconv.webp"
 					alt="Business Solutions"
+					width="800"
+					height="600"
+					loading="lazy"
+					decoding="async"
 					class="mb-4 h-card-image-lg w-full rounded-md object-cover"
 				/>
 				<div class="flex flex-col gap-4">

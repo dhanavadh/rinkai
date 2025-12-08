@@ -73,9 +73,11 @@
 			<div class="swiper-slide relative">
 				<!-- Background Image -->
 				<img
-					width="1920"
-					height="1080"
-					sizes="100vw"
+					width="1200"
+					height="900"
+					loading="lazy"
+					decoding="async"
+					fetchpriority={slide.id === allSlides[0]?.id ? 'high' : 'low'}
 					src={slide.imageSrc}
 					alt={slide.title}
 					class="absolute inset-0 h-full w-full object-cover brightness-50"
