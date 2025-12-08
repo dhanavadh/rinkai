@@ -1,6 +1,29 @@
 <script lang="ts">
 	import { AlertTriangle } from 'lucide-svelte';
+
+	const siteUrl = 'https://rinkai.co';
+	const pageTitle = 'Service Status – Rinkai Industries';
+	const pageDescription =
+		'Check the current status of Rinkai Industries services and systems. View any ongoing incidents or maintenance.';
+	const ogImage = `${siteUrl}/og-img.webp`;
+	const pageUrl = `${siteUrl}/status`;
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+	<link rel="canonical" href={pageUrl} />
+
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={pageDescription} />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:alt" content="Rinkai Industries Status" />
+
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={pageDescription} />
+	<meta name="twitter:image" content={ogImage} />
+</svelte:head>
 
 <div class="mx-auto flex min-h-screen w-full max-w-4xl flex-col p-6 font-ibm">
 	<section

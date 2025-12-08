@@ -13,6 +13,12 @@
 		Repeat
 	} from 'lucide-svelte';
 
+	const siteUrl = 'https://rinkai.co';
+	const pageTitle = 'Rinkai Industries – Make life easier';
+	const pageDescription =
+		'Rinkai Industries is dedicated to providing innovative solutions for your business needs. Digital solutions, business intelligence, and supply chain optimization.';
+	const ogImage = `${siteUrl}/og-img.webp`;
+
 	const bannerSlides: BannerSlide[] = [
 		{
 			id: 1,
@@ -89,6 +95,22 @@
 		}
 	];
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+	<link rel="canonical" href={siteUrl} />
+
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={pageDescription} />
+	<meta property="og:url" content={siteUrl} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:alt" content="Rinkai Industries" />
+
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={pageDescription} />
+	<meta name="twitter:image" content={ogImage} />
+</svelte:head>
 
 <div class="flex w-full flex-col font-ibm">
 	<!-- Hero Banner -->

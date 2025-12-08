@@ -8,6 +8,14 @@
 
 	const { article, Content, relatedArticles } = data;
 
+	const siteUrl = 'https://rinkai.co';
+	const pageTitle = `${article.title} – Rinkai Industries`;
+	const pageDescription = article.abstract;
+	const ogImage = article.heroImage.startsWith('http')
+		? article.heroImage
+		: `${siteUrl}${article.heroImage}`;
+	const pageUrl = `${siteUrl}/articles/${article.slug}`;
+
 	function getTypeLabel(type: ArticleType): string {
 		const labels: Record<ArticleType, string> = {
 			research: 'Research',
@@ -17,6 +25,25 @@
 		return labels[type];
 	}
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+	<link rel="canonical" href={pageUrl} />
+
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={pageDescription} />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:alt" content={article.title} />
+	<meta property="og:type" content="article" />
+	<meta property="article:published_time" content={article.date} />
+	<meta property="article:author" content={article.authors.join(', ')} />
+
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={pageDescription} />
+	<meta name="twitter:image" content={ogImage} />
+</svelte:head>
 
 <div class="flex w-full flex-col font-ibm">
 	<!-- Banner Image -->

@@ -7,6 +7,13 @@
 
 	let { data }: { data: PageData } = $props();
 
+	const siteUrl = 'https://rinkai.co';
+	const pageTitle = 'Articles – Rinkai Industries';
+	const pageDescription =
+		'Research, use cases, and insights on digital transformation, business intelligence, and industry best practices from Rinkai Industries.';
+	const ogImage = `${siteUrl}/og-img.webp`;
+	const pageUrl = `${siteUrl}/articles`;
+
 	let searchQuery = $state('');
 	let selectedType = $state<ArticleType | 'all'>('all');
 
@@ -56,6 +63,22 @@
 		return result;
 	});
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+	<link rel="canonical" href={pageUrl} />
+
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={pageDescription} />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:alt" content="Rinkai Industries Articles" />
+
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={pageDescription} />
+	<meta name="twitter:image" content={ogImage} />
+</svelte:head>
 
 <div class="flex w-full flex-col font-ibm">
 	<!-- Hero Section -->
