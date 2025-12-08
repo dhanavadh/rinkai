@@ -1,10 +1,10 @@
 <script lang="ts">
 	import AnimatedIcon from '$lib/components/ui/AnimatedIcon.svelte';
-	import Banner from '$lib/components/layout/Banner.svelte';
+	import HalfBanner from '$lib/components/layout/HalfBanner.svelte';
 	import PromoBanner from '$lib/components/ui/PromoBanner.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
 	import Slider from '$lib/components/ui/Slider.svelte';
-	import type { SliderItem } from '$lib/types';
+	import type { SliderItem, BannerSlide } from '$lib/types';
 	import {
 		ArrowBigDown,
 		ChartSpline,
@@ -12,6 +12,33 @@
 		PanelTopIcon,
 		Repeat
 	} from 'lucide-svelte';
+
+	const bannerSlides: BannerSlide[] = [
+		{
+			id: 1,
+			title: 'Digital Solutions for Business',
+			description: 'สร้าง performance ให้ธุรกิจของคุณได้ดียิ่งขึ้น',
+			imageSrc: '/brands/iconv-1.webp',
+			href: '/services',
+			buttonText: 'ดูเพิ่มเติม'
+		},
+		{
+			id: 2,
+			title: 'Business Intelligence Dashboard',
+			description: 'วิเคราะห์ข้อมูลธุรกิจอย่างมีประสิทธิภาพด้วย Dashboard ที่ออกแบบมาเพื่อคุณ',
+			imageSrc: '/brands/iconv-2.webp',
+			href: '/services',
+			buttonText: 'ดูเพิ่มเติม'
+		},
+		{
+			id: 3,
+			title: 'Supply Chain Optimization',
+			description: 'เพิ่มประสิทธิภาพการจัดการ Supply Chain ด้วยเทคโนโลยีที่ทันสมัย',
+			imageSrc: '/brands/iconv-3.webp',
+			href: '/services',
+			buttonText: 'ดูเพิ่มเติม'
+		}
+	];
 
 	const promoLearnMoreItems = [
 		{
@@ -64,34 +91,8 @@
 </script>
 
 <div class="flex w-full flex-col font-ibm">
-	<!-- <Banner
-		title="Solutions for Business"
-		description="สร้าง performance ให้ธุรกิจของคุณได้ดียิ่งขึ้น"
-		imageSrc="/images/_.webp"
-		href="/"
-		buttonText="ดูเพิ่มเติม"
-	/> -->
-
-	<div class="relative flex h-screen w-full font-ibm md:h-[500px]">
-		<div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 p-6">
-			<section class="z-10 mt-16 flex flex-col gap-4">
-				<span class="text-stone-800">
-					<h1 class="mb-2 text-5xl">Digital Solutions for Business</h1>
-					<p class="text-lg">สร้าง performance ให้ธุรกิจของคุณได้ดียิ่งขึ้น</p>
-				</span>
-				<a
-					href="/"
-					class="flex w-fit items-center rounded-full bg-stone-800 px-4 py-2 font-medium text-white"
-				>
-					ดูเพิ่มเติม
-				</a>
-			</section>
-			<section class="flex w-fit items-center justify-center">
-				<AnimatedIcon size={128} />
-			</section>
-		</div>
-		<div class="absolute h-full w-full object-cover brightness-90"></div>
-	</div>
+	<!-- Hero Banner -->
+	<HalfBanner slides={bannerSlides} autoPlay />
 
 	<div class="mb-12 flex flex-col gap-6">
 		<Section>
