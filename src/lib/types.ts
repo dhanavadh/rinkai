@@ -44,3 +44,26 @@ export interface SliderItem {
 	imageUrl: string;
 	linkUrl: string;
 }
+
+export type ArticleType = 'research' | 'review' | 'book-chapter' | 'conference';
+
+export interface Article {
+	id: string | number;
+	title: string;
+	journal: string;
+	date: string;
+	authors: string[];
+	type: ArticleType;
+	hasFullAccess?: boolean;
+	abstract?: string;
+	href: string;
+}
+
+export interface BannerSlide {
+	id: string | number;
+	title: string;
+	description: string;
+	imageSrc: string;
+	href: string;
+	buttonText: string;
+}
