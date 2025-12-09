@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://rinkai.co.th/sitemap.xml
+Sitemap: https://rinkai.co/sitemap.xml

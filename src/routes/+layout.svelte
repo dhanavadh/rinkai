@@ -15,6 +15,19 @@
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
 
+	<!-- JSON-LD Schema Markup -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Rinkai Industries",
+		"url": "https://rinkai.co",
+		"logo": "https://rinkai.co/favicon.svg",
+		"description": "Rinkai Industries - Make life easier with APIs, web development, and security solutions.",
+		"sameAs": []
+	}
+	</script>`}
+
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -8,17 +8,8 @@ export const menuConfig: MenuConfig = {
 			megaMenu: 'services'
 		},
 		{
-			title: 'Solutions',
-			href: '/solutions',
-			megaMenu: 'solutions'
-		},
-		{
 			title: 'Articles',
 			href: '/articles'
-		},
-		{
-			title: 'About Us',
-			href: '/about'
 		}
 	],
 	megaMenus: {
@@ -92,61 +83,10 @@ export const menuConfig: MenuConfig = {
 			banner: [
 				{
 					id: '3',
-					title: 'Explore Our Solutions',
-					description: 'Find the perfect logistics solution for your business needs.',
+					title: 'Read Our Articles',
+					description: 'Explore our research and use cases.',
 					imageSrc: '/images/blog-1.svg',
-					href: '/solutions'
-				}
-			]
-		},
-		solutions: {
-			columns: [
-				{
-					title: 'By Industry',
-					links: [
-						{
-							id: '4',
-							title: 'Retail & E-commerce',
-							description: 'Solutions for the fast-paced retail industry',
-							href: '/solutions/retail',
-							icon: 'Briefcase'
-						},
-						{
-							id: '5',
-							title: 'Automotive',
-							description: 'Streamlined logistics for the automotive sector',
-							href: '/solutions/automotive',
-							icon: 'Users'
-						}
-					]
-				},
-				{
-					title: 'By Business Need',
-					links: [
-						{
-							id: '6',
-							title: 'Supply Chain Optimization',
-							description: 'Improve efficiency and reduce costs',
-							href: '/solutions/supply-chain-optimization',
-							icon: 'Lightbulb'
-						},
-						{
-							id: '7',
-							title: 'Data & Analytics',
-							description: 'Gain insights and make data-driven decisions',
-							href: '/solutions/data-analytics',
-							icon: 'BarChart'
-						}
-					]
-				}
-			],
-			banner: [
-				{
-					id: '8',
-					title: 'Explore Our Services',
-					description: 'Find the perfect logistics service for your business needs.',
-					imageSrc: '/images/webremake.svg',
-					href: '/services'
+					href: '/articles'
 				}
 			]
 		}
